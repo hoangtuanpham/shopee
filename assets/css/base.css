@@ -1,0 +1,159 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: #fd5e32;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+    height: 1000px;
+}
+
+/* Responsive */
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.grid__column-2 {
+    padding-left: 8px;
+    padding-right: 8px;
+    width: calc(100% / 6);
+}
+
+.grid__column-2-4 {
+    padding-left: 8px;
+    padding-right: 8px;
+    width: calc(100% / 5);
+}
+
+.grid__column-10 {
+    padding-left: 8px;
+    padding-right: 8px;
+    width: calc(100% / 6 * 5);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    animation: modal ease .2s;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal__body {
+    margin: auto;
+    z-index: 1;
+    border-radius: 4px;
+    background-color: #fff;
+    width: 500px;
+    animation: modalBody ease .2s;
+}
+
+@keyframes modalBody {
+    from {
+        scale: 0;
+    }
+    to {
+        scale: 1;
+    }
+}
+
+.btn {
+    height: 36px;
+    min-width: 142px;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.btn:hover {
+    background-color: rgb(193, 241, 254);
+}
+
+.btn.btn--primary {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.btn.btn--disabled {
+    cursor: default;
+    filter: brightness(80%);
+    background-color: #ccc;
+}
+
+.pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination-item__link {
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #939393;
+    min-width: 40px;
+    height: 30px;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 2px;
+    margin: 0 8px;
+}
+
+.pagination-item__link--active {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.pagination-item__link--active:hover {
+    opacity: 0.9;
+}
